@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
-/dist
-
+dist
+.nginx
+.editorconfig
 
 # local env files
 .env.local
