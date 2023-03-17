@@ -23,7 +23,7 @@
     <SideBar/>
     <article>
       <BooksList :books="books"/>
-    </article>
+    </article>    
   </div>
 
 
