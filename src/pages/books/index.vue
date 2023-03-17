@@ -24,7 +24,6 @@
     <article>
       <BooksList :books="books"/>
     </article>
-
   </div>
 
 
@@ -33,8 +32,6 @@
 <style>
 
 .layout article {
-
   margin-left: 324px;
-
 }
 </style>
