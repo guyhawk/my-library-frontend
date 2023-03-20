@@ -1,2 +1,2 @@
-import BooksPage from './index.vue';
+import BooksPage from './books.vue';
 export default BooksPage;

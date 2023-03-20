@@ -1,2 +1,2 @@
-import LoginPage from './index.vue';
+import LoginPage from './login.vue';
 export default LoginPage;
