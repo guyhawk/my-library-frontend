@@ -28,6 +28,6 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
   @import "./index.scss";
 </style>

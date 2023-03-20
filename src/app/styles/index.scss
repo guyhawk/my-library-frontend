@@ -1,12 +1,17 @@
 :root {
   --primary-color: #6979f8;
   --primary-color-hover: #6979a8;
+  --white: #ffffff;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
 }
 
 a {
