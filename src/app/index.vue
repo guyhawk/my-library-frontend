@@ -13,7 +13,7 @@
     if (user !== null) {
       if (user !== '') {
         currentUser = JSON.parse(user)
-        store.commit('user/setUser', user)
+        store.commit('user/setUser', currentUser)
       }
     }
   }
