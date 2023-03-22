@@ -1,2 +1,2 @@
-import BooksList from './ui.vue';
+import BooksList from './books-list.vue';
 export {BooksList};

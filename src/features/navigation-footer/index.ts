@@ -1,2 +1,2 @@
-import NavigationFooter from './ui.vue'
+import NavigationFooter from './navigation-footer.vue'
 export {NavigationFooter} 

@@ -1,2 +1,2 @@
-import LoginForm from './ui.vue';
+import LoginForm from './login-form.vue';
 export {LoginForm};

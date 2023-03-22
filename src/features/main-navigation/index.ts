@@ -1,2 +1,2 @@
-import MainNavigation from './ui.vue';
+import MainNavigation from './main-navigation.vue';
 export {MainNavigation};
