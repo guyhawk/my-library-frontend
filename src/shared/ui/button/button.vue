@@ -2,7 +2,7 @@
   const props = defineProps({
       label: {
           type: String,
-          default: 'Submit'
+          default: ''
       },
       color: {
           type: String,
@@ -12,6 +12,15 @@
           type: Boolean,
           default: false
       },
+      type: {
+          type: String,
+          default: 'square'
+      },
+      icon: {
+          type: String,
+          default: ''
+      },
+
   })
 
   const emit = defineEmits(['click'])
@@ -20,7 +29,7 @@
   }
 </script>
 <template>
-  <button :class="['btn', `btn-${color}`]" :disabled="disabled" @click="clickButton">{{label}}</button>
+  <button :class="['btn', `btn-${color}`, `btn-${type}`]" :disabled="disabled" @click="clickButton"><span v-if="!!icon" class="pi primary" :class="[`${icon}`]"></span>{{label}}</button>
 </template>
 
 <style lang="scss" scoped>
@@ -33,7 +42,7 @@
   font-size: 1rem;
 
   border: none;
-  border-radius: 12px;
+
 
   cursor: pointer;
 
@@ -45,10 +54,36 @@
     }
   }
 
+  &-transparent {
+    background: none;
+    &:enabled:hover {
+      background: rgba($color: #fff, $alpha: 0.2);
+    }
+  }
+
+  background-color: none;
+
   &:disabled {
     opacity: 0.6;
     cursor: default;
   }
+  &-square {
+    border-radius: 12px;
+  }
+
+  &-rounded {
+    border-radius: 24px;
+  }
+
+  &-circle {
+    border-radius: 24px;
+    width: 48px;
+  }
+
+}
+
+.primary {
+  color: var(--primary-color)
 }
 
 </style>
