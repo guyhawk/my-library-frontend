@@ -1,37 +1,49 @@
 <script setup lang="ts">
 
   import {useStore} from 'vuex';
-  import {booksModel} from '@/entities/books';
-  import {onMounted, computed} from 'vue'
-
+  import {useRoute} from 'vue-router'
+  import {computed, ref} from 'vue'
   import {SideBar} from '@/widgets/sidebar'
-
   import {BooksList} from '@/widgets/books-list'
+  import messages from '@/shared/lib/messages';
 
-  const store = useStore();
+  const store = useStore()
+  const route = useRoute()
 
-  const books = computed(()=> store.state['books'].books)
+  const title = ref(route.name)
 
-  const getBooksListAsync = () => store.dispatch(booksModel.actions.getBooksListAsync);
-  onMounted(getBooksListAsync)
-
+  const fullPage = computed(() => !store.getters.getSidebar)
   
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout" :class="`${fullPage ? 'full' : ''}`">
+
     <SideBar/>
     <article>
-      <BooksList :books="books"/>
+      <PageTitle>{{messages.pageTitles[title]}}</PageTitle>
+      <BooksList class="books"/>
     </article>    
   </div>
-
-
 </template>
 
-<style>
+<style lang="scss" scoped>
 
-.layout article {
-  margin-left: 324px;
+.layout {
+  &.full {
+    article {
+      margin-left: 74px;
+    }
+  }
+
+  article {
+    transition: all 0.3s ease-in-out;
+    margin-left: 324px;
+    padding-top: 24px;
+    padding-right: 24px;
+    .books {
+      margin-top: 24px;
+    }
+  }
 }
 </style>
