@@ -34,6 +34,8 @@
   <!-- <form> -->
 
       <div class="login-form">
+        <div class="welcome-text">{{ messages.welcomeBackPromt }}</div>
+        <div class="app-name">{{ messages.appTitle }}</div>
         <div class="form-item">
           <label for="email" class="block text-900 font-medium mb-2">{{ messages.emailPromt }}</label>
           <InputText id="email" type="text" class="w-full mb-3" v-model="payload.email"/>
@@ -81,5 +83,16 @@
     }
    
   }
+  .welcome-text {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+   .app-name {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+   }
 }
 </style>
