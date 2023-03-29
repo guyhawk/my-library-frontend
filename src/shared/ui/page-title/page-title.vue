@@ -1,7 +1,7 @@
 <template>
-  <dic class="page-title">
+  <div class="page-title">
     <slot></slot>
-  </dic>
+  </div>
 </template>
 
 <style lang="scss" scoped>
