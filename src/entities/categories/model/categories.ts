@@ -23,7 +23,7 @@ export const module = {
     },
     actions: {
         getCategoriesAsync: async ({commit, rootGetters}: any) => {
-             const token = rootGetters['user/getToken']
+            const token = rootGetters['user/getToken']
             try {
               const response = await categoriesServices.categories.getCategories(token)      
               //TODO getCategoriesAsync type IS not define
@@ -32,6 +32,16 @@ export const module = {
             } finally {
             }
         },
+        addCategoryAsync: async ({commit, dispatch, rootGetters}: any, params: categoriesServices.categories.payloadCategory) => {
+          const token = rootGetters['user/getToken']
+          try {
+            console.log(params)
+            const response = await categoriesServices.categories.addCategory(token, params)
+            dispatch('getCategoriesAsync')
+          } catch (e) {
+
+          }
+        }
     }
 }
 
@@ -39,6 +49,7 @@ const withPrefix = (name: string) => IS_NAMESPACED ? `${NAMESPACE}/${name}` : na
 
 export const actions = {
   getCategoriesAsync: withPrefix('getCategoriesAsync'),
+  addCategoryAsync: withPrefix('addCategoryAsync'),
 }
 
 export const mutations = {
